@@ -1,0 +1,14 @@
+#!/bin/bash
+# This script toggles between the internal laptop display and the vga1 device
+# first parameter is extern, the external monitor will be on an laptop off.
+# all other inputs will be turning the internal device on and external off
+MODE=$1
+
+EXTERNAL_OUTPUT="VGA1"
+INTERNAL_OUTPUT="LVDS1"
+echo $MODE
+if [ "$MODE" = "extern" ]; then
+    xrandr --output $INTERNAL_OUTPUT --off --output $EXTERNAL_OUTPUT --mode 1680x1050
+else
+    xrandr --output $INTERNAL_OUTPUT --auto --output $EXTERNAL_OUTPUT --off
+fi

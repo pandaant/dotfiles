@@ -1,0 +1,2 @@
+#!/bin/bash
+cd ~/.config/wallpapers && feh --bg-center $(ls | shuf -n 1)

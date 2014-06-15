@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "Starting Postgres Server. Postgres userpw required."
+su postgres -c "postgres -D /usr/local/pgsql/data"

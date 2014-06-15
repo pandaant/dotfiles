@@ -1,0 +1,17 @@
+
+Xft.antialias:true
+Xft.hinting:true
+Xft.hintstyle:3
+  
+URxvt*saveLines: 65535
+URxvt*foreground:White
+URxvt*scrollBar:true
+URxvt*scrollBar_right:true
+URxvt*scrollBar_floating:false
+URxvt*scrollstyle:plain
+URxvt*troughColor:#000000
+URxvt*scrollColor:#222222
+URxvt*font:xft:inconsolata:pixelsize=13
+
+URxvt*depth:32
+URxvt*background:rgba:0000/0000/0200/d800
