@@ -1,7 +1,3 @@
-#
-# ~/.bashrc
-#
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -10,9 +6,8 @@ if [ -d "$HOME/bin" ]; then
     PATH="$HOME/bin:$PATH" 
 fi
 
-# default browser
-export BROWSER=chromium
 export EDITOR=vim
+export BROWSER=chromium
 
 # for faster navigation
 alias u='cd ..'
@@ -43,6 +38,7 @@ man() {
         man "$@"
 }
 
+# installs man for all gems
 gen_missing_ridocs(){
     gem rdoc --all --ri --no-rdoc
 }
@@ -98,5 +94,6 @@ if [ -d "/usr/local/pgsql" ]; then
     MANPATH="/usr/local/pgsql/man:$MANPATH"
 fi
 
+# add ruby gems to path
 RB_GEMS=$(ruby -rubygems -e "puts Gem.user_dir")
 PATH="$RB_GEMS/bin:$PATH" 
