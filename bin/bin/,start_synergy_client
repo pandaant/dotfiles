@@ -1,7 +1,0 @@
-#!/bin/bash
-# this script starts a synergy client and connects to 
-# the batcave
-
-IP_SERVER="149.201.240.93"
-
-synergyc --crypto-pass 81fa440d3c079bd0a4597ba6dcfd1fc0 --debug ERROR --name batmobile -f $IP_SERVER

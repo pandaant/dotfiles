@@ -1,1 +1,0 @@
-synergys -f --crypto-pass 81fa440d3c079bd0a4597ba6dcfd1fc0 --debug ERROR --name batcave -c ~/.synergy/server_batcave --address :24800
