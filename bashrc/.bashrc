@@ -79,6 +79,9 @@ alias svnch='svn checkout'
 alias svns='svn status'
 alias svnr='svn revert'
 
+# list pidgin smileys
+alias smpidgin='cat .purple/smileys/AdvSmileys/theme'
+
 # appearence of input line
 #PS1='\u \W \$ '
 PS1='\[\033[0;32m\]\W\[\033[0m\] \$ '

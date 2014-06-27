@@ -148,11 +148,8 @@ map <space> /
 map <c-space> ?
 
 " persistent undo
-try
-    set undodir=~/.config/vim_runtime/tmp/undo
-    set undofile
-catch
-endtry
+set undodir=~/.vim/tmp/undo
+set undofile
 
 " clang integration
 map <leader>f :pyfile ~/.vim/clang-format.py<CR>
