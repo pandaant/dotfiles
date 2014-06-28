@@ -37,7 +37,7 @@ map <leader>dl :DoxLic<cr>
 let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
 let g:vimshell_prompt =  '$ '
 
-map <leader>vs :VimShell<cr>
+map <leader>vs :VimShellPop<cr>
 
 "neocomplcache
 " Use neocomplcache.
