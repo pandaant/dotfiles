@@ -174,3 +174,6 @@ map <leader>sd <C-]>
 map <leader>sl :tselect<cr>
 " jump to next matching tag
 map <leader>sn :tnext<cr>
+
+" make shell behave like cmd
+set shellcmdflag=-ic
