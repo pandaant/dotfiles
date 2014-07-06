@@ -100,3 +100,5 @@ fi
 # add ruby gems to path
 RB_GEMS=$(ruby -rubygems -e "puts Gem.user_dir")
 PATH="$RB_GEMS/bin:$PATH" 
+
+source ~/.profile
