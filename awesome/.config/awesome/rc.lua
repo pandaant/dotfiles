@@ -215,6 +215,23 @@ root.buttons(awful.util.table.join(
 
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
+    awful.key({modkey}, "#121", function() 
+        awful.util.spawn(musicplayer .. " --toggle-pause")    
+        naughty.notify({text="Play/Pause", timeout = 1})  
+    end  ),
+    awful.key({}, "#121", function() 
+        awful.util.spawn("pamixer --toggle-mute")    
+        naughty.notify({text="Mute/Unmute", timeout = 1})  
+    end  ),
+    awful.key({}, "#122", function() 
+        awful.util.spawn("pamixer --decrease 10")    
+        naughty.notify({text="Lowering volume", timeout = 1})  
+    end  ),
+    awful.key({}, "#123", function()
+        awful.util.spawn("pamixer --increase 10")    
+        naughty.notify({text="Increasing volume", timeout = 1}) 
+    end  ),
+    awful.key({}, "#148", function() naughty.notify({text="Special Key", timeout = 1})  end  ),
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore),
