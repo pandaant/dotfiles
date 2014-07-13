@@ -17,10 +17,13 @@ fi
 # set keyboard
 setxkbmap -layout de -variant deadacute
 
-            # map caps to esc
-setxkbmap -option caps:escape
+# map caps to esc
+#setxkbmap -option caps:escape
 
 # enable numlock
 numlockx &
+
+#load keyboard layout
+xmodmap .Xmodmap
 
 exec awesome 
