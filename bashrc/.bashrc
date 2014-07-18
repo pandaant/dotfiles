@@ -6,6 +6,11 @@ if [ -d "$HOME/bin" ]; then
     PATH="$HOME/bin:$PATH" 
 fi
 
+ #include google chrome depot tools
+#if [ -d "/data/sources/depot_tools" ]; then
+    #PATH="/data/sources/depot_tools:$PATH" 
+#fi
+
 export EDITOR=vim
 export BROWSER=chromium
 
@@ -78,6 +83,9 @@ alias svnc='svn commit'
 alias svnch='svn checkout'
 alias svns='svn status'
 alias svnr='svn revert'
+
+# only manage aurpackages with packer
+alias packer='packer --auronly'
 
 # list pidgin smileys
 alias smpidgin='cat .purple/smileys/AdvSmileys/theme'

@@ -47,3 +47,20 @@ let g:neocomplcache_enable_smart_case = 1
 " Set minimum syntax keyword length.
 let g:neocomplcache_min_syntax_length = 3
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+
+"emmet config
+let g:user_emmet_settings = {
+            \  'indentation' : '  ',
+            \  'perl' : {
+            \    'aliases' : {
+            \      'req' : 'require '
+            \    },
+            \    'snippets' : {
+            \      'use' : "use strict\nuse warnings\n\n",
+            \      'warn' : "warn \"|\";",
+            \    }
+            \  }
+            \}
+
+let g:user_emmet_expandabbr_key = '<c-e>'
+let g:use_emmet_complete_tag = 1

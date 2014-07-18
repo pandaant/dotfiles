@@ -39,4 +39,5 @@ Thumbs.db
 bin/bin/,start_synergy_client
 bin/bin/,start_synergy_server
 bin/bin/,unpck_sjunk
-vifm/.vifm/vifminfo
+vifm/.vifm/vifminfo*
+vim/.vim/tmp

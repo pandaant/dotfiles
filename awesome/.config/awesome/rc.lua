@@ -216,7 +216,7 @@ root.buttons(awful.util.table.join(
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
     awful.key({modkey}, "#121", function() 
-        awful.util.spawn(musicplayer .. " --toggle-pause")    
+        awful.util.spawn(musicplayer .. " --toggle-pause & ")    
         naughty.notify({text="Play/Pause", timeout = 1})  
     end  ),
     awful.key({}, "#121", function() 
@@ -227,9 +227,19 @@ globalkeys = awful.util.table.join(
         awful.util.spawn("pamixer --decrease 10")    
         naughty.notify({text="Lowering volume", timeout = 1})  
     end  ),
+    awful.key({modkey}, "#122", function() 
+        awful.util.spawn(musicplayer .. " --prev &")    
+        local song = awful.util.pread(musicplayer .. " --nowplaying \"%a - %t\"") 
+        naughty.notify({text="Previous song:\n" .. song, timeout = 2})  
+    end  ),
     awful.key({}, "#123", function()
         awful.util.spawn("pamixer --increase 10")    
         naughty.notify({text="Increasing volume", timeout = 1}) 
+    end  ),
+    awful.key({modkey}, "#123", function() 
+        awful.util.spawn(musicplayer .. " --next &")    
+        local song = awful.util.pread(musicplayer .. " --nowplaying \"%a - %t\"") 
+        naughty.notify({text="Next Song:\n" .. song, timeout = 2})  
     end  ),
     awful.key({}, "#148", function() naughty.notify({text="Special Key", timeout = 1})  end  ),
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
