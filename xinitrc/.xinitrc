@@ -18,7 +18,7 @@ fi
 setxkbmap -layout de -variant deadacute
 
 # map caps to esc
-#setxkbmap -option caps:escape
+setxkbmap -option caps:escape
 
 # enable numlock
 numlockx &

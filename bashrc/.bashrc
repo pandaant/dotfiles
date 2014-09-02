@@ -6,11 +6,6 @@ if [ -d "$HOME/bin" ]; then
     PATH="$HOME/bin:$PATH" 
 fi
 
- #include google chrome depot tools
-#if [ -d "/data/sources/depot_tools" ]; then
-    #PATH="/data/sources/depot_tools:$PATH" 
-#fi
-
 export EDITOR=vim
 export BROWSER=chromium
 
@@ -29,6 +24,9 @@ alias pacman='pacman --color=auto'
 alias dmesg='dmesg --color=auto'
 alias tree='tree -C'
 alias less='less -R'
+
+# make mv ask before overwriting a file by default
+alias mv="mv -i"
 
 # color for man!
 man() {
@@ -64,7 +62,7 @@ alias ds='urxvt -cd $(pwd) &'
 # misc
 alias murder='kill -9'
 alias pms='pacman -Ss'
-alias pmi='s pacman -S'
+alias pmi='s pacman --noconfirm -S'
 alias tl='tree | less'
 alias hman='man --html'
 
@@ -103,6 +101,10 @@ fi
 if [ -d "/usr/local/pgsql" ]; then
     PATH="/usr/local/pgsql/bin:$PATH"
     MANPATH="/usr/local/pgsql/man:$MANPATH"
+fi
+
+if [ -d "/usr/local/freedom" ]; then
+    PATH="/usr/local/freedom/bin:$PATH" 
 fi
 
 # add ruby gems to path

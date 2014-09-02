@@ -185,4 +185,4 @@ if bufwinnr(1)
 endif    
 
 " indent default html elements
-:let g:html_indent_inctags = "html,body,head,tbody" 
+:let g:html_indent_inctags = "html,body,head,tbody,style" 

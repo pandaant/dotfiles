@@ -409,6 +409,8 @@ awful.rules.rules = {
     -- Set Firefox to always map on tags number 2 of screen 1.
      { rule = { class = "Pidgin" },
        properties = { tag = tags[1][10] } },
+     { rule = { class = "irssi" },
+       properties = { tag = tags[1][10] } },
      { rule = { class = "Thunderbird" },
        properties = { tag = tags[1][11] } },
 }
