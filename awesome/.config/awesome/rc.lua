@@ -458,7 +458,9 @@ globalkeys = awful.util.table.join(
         mywibox[mouse.screen].visible = not mywibox[mouse.screen].visible
     end),
     -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end)
+    awful.key({ modkey }, "p", function()
+        awful.util.spawn( "dmenu_run" )
+    end)
 )
 
 clientkeys = awful.util.table.join(
