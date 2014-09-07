@@ -204,7 +204,7 @@ memicon:set_image(beautiful.mem)
 --{{---| CPU / sensors widget |-----------
 cpuwidget = wibox.widget.textbox()
 vicious.register(cpuwidget, vicious.widgets.cpu,
-'<span background="#313131" font="Inconsolata 11"> <span font="Inconsolata 11" color="#AAAAAA">$2%<span color="#888888">·</span>$3% </span></span>', 5)
+'<span background="#313131" font="Inconsolata 11"> <span font="Inconsolata 11" color="#AAAAAA">$2%<span color="#888888">·</span>$3%<span color="#888888">·</span>$4%<span color="#888888">·</span>$5%<span color="#888888">·</span>$6%<span color="#888888">·</span>$7%</span></span>', 5)
 
 cpuicon = wibox.widget.imagebox()
 cpuicon:set_image(beautiful.cpu)
