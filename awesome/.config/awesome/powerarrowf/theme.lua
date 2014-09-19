@@ -11,7 +11,7 @@ theme.font          = "sans 8"
 
 theme.bg_normal     = "#222222"
 theme.bg_focus      = "#1E2320"
-theme.bg_urgent     = "#3F3F3F"
+theme.bg_urgent     = "#000000"
 theme.bg_systray    = theme.bg_normal
 
 theme.fg_normal     = "#AAAAAA"
