@@ -176,7 +176,7 @@ map <leader>sl :tselect<cr>
 map <leader>sn :tnext<cr>
 
 " make shell behave like cmd
-set shellcmdflag=-ic
+"set shellcmdflag=-ic
 
 " enable easy resizing
 if bufwinnr(1)
@@ -186,3 +186,7 @@ endif
 
 " indent default html elements
 :let g:html_indent_inctags = "html,body,head,tbody,style" 
+
+" tree view and netrw
+set nocp 
+let g:netrw_liststyle = 3

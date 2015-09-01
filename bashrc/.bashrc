@@ -60,11 +60,13 @@ alias nm='nm --demangle'
 alias ds='urxvt -cd $(pwd) &'
 
 # misc
+alias du='du -h'
 alias murder='kill -9'
 alias pms='pacman -Ss'
 alias pmi='s pacman --noconfirm -S'
 alias tl='tree | less'
 alias hman='man --html'
+alias runjar='java -jar'
 
 # searching orphaned packages
 alias lsorhpans='pacman -Qdt'
@@ -111,4 +113,18 @@ fi
 RB_GEMS=$(ruby -rubygems -e "puts Gem.user_dir")
 PATH="$RB_GEMS/bin:$PATH" 
 
-source ~/.profile
+imgur() {
+    for i in "$@"; do
+    curl -# -F "image"=@"$i" -F "key"="4907fcd89e761c6b07eeb8292d5a9b2a" imgur.com/api/upload.xml|\
+            grep -Eo '<[a-z_]+>http[^<]+'|sed 's/^<.\|_./\U&/g;s/_/ /;s/<\(.*\)>/\x1B[0;34m\1:\x1B[0m /'
+    done
+}
+
+#pdfgrep(){
+    #echo find . -name '*.pdf' -exec sh -c 'pdftotext "{}" - | grep --with-filename --label="{}" --color "\$1"' \;
+#}
+
+# load hostname specific option file
+if [ -f ~/.profile ]; then
+    source ~/.profile
+fi
