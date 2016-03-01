@@ -4,6 +4,14 @@
 
 theme = {}
 
+theme.useless_gap_width = 5
+theme.lain_icons         = os.getenv("HOME") .. "/.config/awesome/lain/icons/layout/default/"
+theme.layout_termfair    = theme.lain_icons .. "termfair.png"
+theme.layout_uselesstile   = theme.lain_icons .. "termfairw.png"
+theme.layout_cascade     = theme.lain_icons .. "cascadew.png"
+theme.layout_cascadetile = theme.lain_icons .. "cascadetilew.png"
+theme.layout_centerwork  = theme.lain_icons .. "centerworkw.png"
+
 -- Setup Paths 
 pathToConfig = os.getenv("HOME") .. "/.config/awesome/"
 

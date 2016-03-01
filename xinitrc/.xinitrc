@@ -26,4 +26,8 @@ numlockx &
 #load keyboard layout
 xmodmap .Xmodmap
 
-exec awesome 
+exec awesome -c .config/awesome/rc.lua
+#exec i3 
+#exec openbox 
+#exec openbox 
+#exec xfwm4

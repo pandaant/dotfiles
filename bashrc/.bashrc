@@ -9,6 +9,8 @@ fi
 export EDITOR=vim
 export BROWSER=chromium
 
+alias ssh-cserver='ssh -p 22333 batman@127.0.0.1'
+
 # for faster navigation
 alias u='cd ..'
 alias uu='u && u'
@@ -16,6 +18,7 @@ alias s='sudo'
 alias e='exit'
 alias v='vim'
 alias c='cd'
+alias cdext='cd /media/Data'
 
 # color enabled
 alias ls='ls --color=auto --group-directories-first'
@@ -46,6 +49,11 @@ gen_missing_ridocs(){
     gem rdoc --all --ri --no-rdoc
 }
 
+# run and pipe to /dev/null
+sc(){
+    $@ &
+}
+
 # open gvim files in same instance
 alias gvim='gvim --remote-silent'
 
@@ -58,6 +66,11 @@ alias nm='nm --demangle'
 # spawn new shell in current directory
 # ds = duplicate shell
 alias ds='urxvt -cd $(pwd) &'
+
+# spawn new shell and execute cmd
+dse() {
+    urxvt -cd $(pwd) -e $@ &
+}
 
 # misc
 alias du='du -h'
@@ -105,6 +118,10 @@ if [ -d "/usr/local/pgsql" ]; then
     MANPATH="/usr/local/pgsql/man:$MANPATH"
 fi
 
+if [ -d "/data/sources/midifile/bin" ]; then
+    PATH="/data/sources/midifile/bin:$PATH"
+fi
+
 if [ -d "/usr/local/freedom" ]; then
     PATH="/usr/local/freedom/bin:$PATH" 
 fi
@@ -128,3 +145,10 @@ imgur() {
 if [ -f ~/.profile ]; then
     source ~/.profile
 fi
+
+LUA_PATH="/usr/share/lua/5.3/?.lua;/usr/share/lua/5.3/?/init.lua"
+LUA_CPATH="/lib/lua/5.3/?.so"
+
+activate_torch(){
+. /home/batman/torch/install/bin/torch-activate
+}

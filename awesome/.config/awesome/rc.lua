@@ -16,6 +16,7 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local vicious = require("vicious")
+local lain = require("lain")
 
 local function warp_mouse()
     c = client.focus
@@ -85,15 +86,18 @@ modkey = "Mod4"
 local layouts =
 {
     awful.layout.suit.tile,
-    awful.layout.suit.floating,
-    awful.layout.suit.tile.left,
-    awful.layout.suit.tile.bottom,
-    awful.layout.suit.fair.horizontal,
-    awful.layout.suit.spiral,
-    awful.layout.suit.spiral.dwindle,
-    awful.layout.suit.max,
-    awful.layout.suit.max.fullscreen,
-    awful.layout.suit.magnifier
+    lain.layout.uselesstile,
+    lain.layout.centerwork,
+    awful.layout.suit.floating
+    --awful.layout.suit.tile.left,
+    --awful.layout.suit.tile.bottom,
+    --awful.layout.suit.fair.horizontal,
+    --awful.layout.suit.spiral,
+    --awful.layout.suit.spiral.dwindle,
+    --awful.layout.suit.max,
+    --awful.layout.suit.max.fullscreen,
+    --awful.layout.suit.magnifier,
+    --lain.layout.uselessfair,
 }
 -- }}}
 
@@ -115,8 +119,12 @@ tags = {}
 
 tags[1] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9, "im", "mail" }, 1, layouts[1])
 
-if screen.count() > 1 then
+if screen.count() == 2 then
     tags[2] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, 2, layouts[1])
+end
+if screen.count() == 3 then
+    tags[2] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, 2, layouts[1])
+    tags[3] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, 3, layouts[1])
 end
 
 -- }}}
@@ -460,7 +468,7 @@ globalkeys = awful.util.table.join(
     end),
     -- Menubar
     awful.key({ modkey }, "p", function()
-        awful.util.spawn( "dmenu_run" )
+        awful.util.spawn( 'rofi -show run -font "Inconsolata 10" -fg "" -bg "#000000" -hlfg "#000000" -hlbg "#CCCCCC" -o 85' )
     end)
 )
 
@@ -634,6 +642,9 @@ os.execute(",run_once xcompmgr")
 
 -- change background every 10 min
 os.execute(",run_once ,wallpaper_changer 600")
+
+-- run zeal
+os.execute(",run_once zeal")
 
 -- load hostspecific settings
 dofile(host_dir .. "post_hook.lua")
