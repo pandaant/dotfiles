@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # script attaches a vga screen to the right of the laptop screen
-xrandr --output VGA1 --mode 1680x1050 --right-of LVDS1
+xrandr --output HDMI-0 --mode 1680x1050 --right-of DP-0

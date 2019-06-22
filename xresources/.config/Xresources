@@ -10,7 +10,8 @@ URxvt*scrollBar_floating:false
 URxvt*scrollstyle:plain
 URxvt*troughColor:#000000
 URxvt*scrollColor:#222222
-URxvt*font:xft:inconsolata:pixelsize=13
+URxvt*font:xft:inconsolata:bold:size=13:antialias=true,hinting=true
+
 URxvt*loginShell:true
 
 URxvt*depth:32

@@ -44,15 +44,12 @@ man() {
         man "$@"
 }
 
-# installs man for all gems
-gen_missing_ridocs(){
-    gem rdoc --all --ri --no-rdoc
-}
-
 # run and pipe to /dev/null
 sc(){
     $@ &
 }
+
+alias yay='yay --aur'
 
 # open gvim files in same instance
 alias gvim='gvim --remote-silent'
@@ -97,9 +94,6 @@ alias svnch='svn checkout'
 alias svns='svn status'
 alias svnr='svn revert'
 
-# only manage aurpackages with packer
-alias packer='packer --auronly'
-
 # list pidgin smileys
 alias smpidgin='cat .purple/smileys/AdvSmileys/theme'
 
@@ -118,17 +112,11 @@ if [ -d "/usr/local/pgsql" ]; then
     MANPATH="/usr/local/pgsql/man:$MANPATH"
 fi
 
-if [ -d "/data/sources/midifile/bin" ]; then
-    PATH="/data/sources/midifile/bin:$PATH"
-fi
-
 if [ -d "/usr/local/freedom" ]; then
     PATH="/usr/local/freedom/bin:$PATH" 
 fi
 
-# add ruby gems to path
-RB_GEMS=$(ruby -rubygems -e "puts Gem.user_dir")
-PATH="$RB_GEMS/bin:$PATH" 
+PATH="~/.config/composer/vendor/bin:~/.gem/ruby/2.6.0/bin:$PATH" 
 
 imgur() {
     for i in "$@"; do
@@ -137,18 +125,8 @@ imgur() {
     done
 }
 
-#pdfgrep(){
-    #echo find . -name '*.pdf' -exec sh -c 'pdftotext "{}" - | grep --with-filename --label="{}" --color "\$1"' \;
-#}
-
 # load hostname specific option file
 if [ -f ~/.profile ]; then
     source ~/.profile
 fi
 
-LUA_PATH="/usr/share/lua/5.3/?.lua;/usr/share/lua/5.3/?/init.lua"
-LUA_CPATH="/lib/lua/5.3/?.so"
-
-activate_torch(){
-. /home/batman/torch/install/bin/torch-activate
-}
